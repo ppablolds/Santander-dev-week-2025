@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 
 @Service
 public class UserImpl implements UserService {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
