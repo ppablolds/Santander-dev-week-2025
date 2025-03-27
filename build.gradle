@@ -27,10 +27,20 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-tasks.jar {
+
+tasks.register('buildJar', Jar) {
+	archiveBaseName = 'BradescoDevWeek2025'
+	archiveVersion = '0.0.1-SNAPSHOT'
+	from sourceSets.main.output
 	manifest {
-		attributes["Main-Class"] = "me.dio.BradescoDevWeek2025Application"
+		attributes(
+				'Main-Class': 'me.dio.BradescoDevWeek2025Application'
+		)
 	}
+}
+
+bootJar {
+	enabled = false
 }
 
 tasks.named('test') {
