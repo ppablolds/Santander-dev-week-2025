@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: ${PGURI}
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+        maximum-pool-size: 5
+        minimum-idle: 2
+        idle-timeout: 10000
+        connection-timeout: 20000
+        max-lifetime: 1800000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    show-sql: true
