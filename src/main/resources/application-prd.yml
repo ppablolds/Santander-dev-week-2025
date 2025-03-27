@@ -14,5 +14,5 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: validate
     show-sql: true
