@@ -12,6 +12,8 @@ public class Account {
         private long id;
 
         @Column(unique = true)
+        private String number;
+
         private String agency;
 
         @Column(scale = 13, precision = 2)
@@ -26,6 +28,14 @@ public class Account {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getAgency() {
