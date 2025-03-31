@@ -20,7 +20,7 @@ FROM openjdk:21-jdk-slim
 WORKDIR /app
 
 # Copiar o arquivo JAR gerado na etapa de build
-COPY --from=build /app/build/libs/*.jar app.jar
+COPY --from=build /app/build/libs/*SNAPSHOT.jar app.jar
 
 # Definir variável de ambiente para a porta usada pelo Render
 ENV PORT=8080

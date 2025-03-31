@@ -34,13 +34,14 @@ dependencies {
 
 
 jar {
+	enabled = false // Evita gerar um JAR simples que não inclui dependências
 	manifest {
 		attributes 'Main-Class': application.mainClass.get()
 	}
 }
 
 bootJar {
-	enabled = false
+	enabled = true // Garante que o JAR executável do Spring Boot será gerado
 }
 
 tasks.named('test') {
