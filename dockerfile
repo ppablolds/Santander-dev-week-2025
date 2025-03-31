@@ -3,7 +3,7 @@ FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
 COPY . .
 RUN chmod +x ./gradlew
-RUN ./gradlew clean build --no-daemon
+RUN ./gradlew clean build --no-daemon --stacktrace
 
 # Etapa de execução
 FROM eclipse-temurin:17-jdk
