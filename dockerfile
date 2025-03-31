@@ -27,4 +27,4 @@ ENV PORT=8080
 EXPOSE 8080
 
 # Comando para rodar a aplicação
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar", "me.dio.BradescoDevWeek2025Application"]
