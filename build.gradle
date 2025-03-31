@@ -5,7 +5,9 @@ plugins {
 	id 'application'
 }
 
-mainClassName = 'me.dio.BradescoDevWeek2025Application'
+application {
+	mainClassName = 'me.dio.BradescoDevWeek2025Application'
+}
 
 group = 'me.dio'
 version = '0.0.1-SNAPSHOT'
@@ -31,14 +33,9 @@ dependencies {
 }
 
 
-tasks.register('buildJar', Jar) {
-	archiveBaseName = 'BradescoDevWeek2025'
-	archiveVersion = '0.0.1-SNAPSHOT'
-	from sourceSets.main.output
+jar {
 	manifest {
-		attributes(
-				'Main-Class': 'me.dio.BradescoDevWeek2025Application'
-		)
+		attributes 'Main-Class': application.mainClass.get()
 	}
 }
 

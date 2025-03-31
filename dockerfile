@@ -1,4 +1,4 @@
-# Etapa de construção (build) com Java 21 e Gradle 8.6
+# Etapa de construção (Build Stage)
 FROM gradle:8.6-jdk21 AS build
 
 # Definir diretório de trabalho
@@ -10,21 +10,21 @@ COPY . .
 # Garantir permissões de execução para o Gradle Wrapper
 RUN chmod +x ./gradlew
 
-# Rodar o build com Gradle
+# Construir o projeto sem usar bootJar
 RUN ./gradlew clean build --no-daemon --stacktrace
 
-# Etapa de execução
+# Etapa de execução (Runtime Stage)
 FROM openjdk:21-jdk-slim
 
 # Definir diretório de trabalho
 WORKDIR /app
 
-# Copiar o arquivo JAR gerado na fase de build
+# Copiar o arquivo JAR gerado na etapa de build
 COPY --from=build /app/build/libs/*.jar app.jar
 
-# Definir a variável de ambiente para a porta usada pelo Render
+# Definir variável de ambiente para a porta usada pelo Render
 ENV PORT=8080
 EXPOSE 8080
 
 # Comando para rodar a aplicação
-CMD ["java", "-jar", "app.jar", "me.dio.BradescoDevWeek2025Application"]
+CMD ["java", "-jar", "app.jar"]
