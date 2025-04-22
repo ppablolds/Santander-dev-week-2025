@@ -1,50 +1,61 @@
-# Santander Dev Week 2023
+# Santander Dev Week 2025 🚀
 
-Java RESTful API criada para a Santander Dev Week.
+Bem-vindo ao projeto desenvolvido durante a **Santander Dev Week 2025**!  
+Este repositório contém uma API RESTful construída com as tecnologias mais modernas do ecossistema Java, visando demonstrar boas práticas de desenvolvimento backend.
 
-## Principais Tecnologias
-- **Java 21**: Utilizaremos a versão LTS mais recente do Java para tirar vantagem das últimas inovações que essa linguagem robusta e amplamente utilizada oferece;
-- **Spring Boot 3**: Trabalharemos com a mais nova versão do Spring Boot, que maximiza a produtividade do desenvolvedor por meio de sua poderosa premissa de autoconfiguração;
-- **Spring Data JPA**: Exploraremos como essa ferramenta pode simplificar nossa camada de acesso aos dados, facilitando a integração com bancos de dados SQL;
-- **OpenAPI (Swagger)**: Vamos criar uma documentação de API eficaz e fácil de entender usando a OpenAPI (Swagger), perfeitamente alinhada com a alta produtividade que o Spring Boot oferece;
-- **Railway**: facilita o deploy e monitoramento de nossas soluções na nuvem, além de oferecer diversos bancos de dados como serviço e pipelines de CI/CD.
+## 🔍 Visão Geral
 
-## Diagrama de Classes (Domínio da API)
+Este projeto tem como objetivo fornecer uma base sólida para aplicações Java modernas, utilizando:
 
-```mermaid
-classDiagram
-  class User {
-    -String name
-    -Account account
-    -Feature[] features
-    -Card card
-    -News[] news
-  }
+- **Java 21**: Aproveitando os recursos mais recentes da linguagem.
+- **Spring Boot 3**: Para uma configuração simplificada e rápida.
+- **Spring Data JPA**: Facilitando a interação com bancos de dados relacionais.
+- **OpenAPI (Swagger)**: Para documentação clara e interativa da API.
+- **Railway**: Simplificando o deploy e monitoramento na nuvem.
 
-  class Account {
-    -String number
-    -String agency
-    -Number balance
-    -Number limit
-  }
+## 🛠️ Tecnologias Utilizadas
 
-  class Feature {
-    -String icon
-    -String description
-  }
+- `Java 21`
+- `Spring Boot 3`
+- `Spring Data JPA`
+- `Swagger / OpenAPI`
+- `Gradle`
+- `Railway`
 
-  class Card {
-    -String number
-    -Number limit
-  }
+## 🚀 Como Executar o Projeto
 
-  class News {
-    -String icon
-    -String description
-  }
+### 1. Clone o repositório:
 
-  User "1" *-- "1" Account
-  User "1" *-- "N" Feature
-  User "1" *-- "1" Card
-  User "1" *-- "N" News
+```bash
+git clone https://github.com/ppablolds/Santander-dev-week-2025.git
+cd Santander-dev-week-2025
 ```
+
+### 2. Execute a aplicação:
+
+```bash
+./gradlew bootRun
+```
+
+A aplicação estará disponível em: `http://localhost:8080`
+
+### 3. Acesse a documentação da API:
+Visite `http://localhost:8080/swagger-ui/index.html` para visualizar e interagir com a documentação gerada pelo Swagger.
+
+### 📁 Estrutura do Projeto
+📦 Santander-dev-week-2025
+
+┣ 📂 src...............# Código-fonte da aplicação <br />
+┣ 📜 build.gradle......# Script de build com Gradle <br />
+┣ 📜 Procfile..........# Arquivo de deploy para Railway <br />
+┗ 📜 README.md.........# Este arquivo
+
+### 🤝 Contribuindo
+
+Contribuições são super bem-vindas!
+Abra uma issue, envie um pull request ou apenas deixe uma ⭐ no repositório se gostou do projeto.
+
+### 📄 Licença
+
+Este projeto está licenciado sob a MIT License.
+Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
